@@ -10,6 +10,8 @@ class HomeViewController: UITableViewController {
         setupRightBarButtonItem()
         title = "Agenda"
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        getContacts()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +33,7 @@ class HomeViewController: UITableViewController {
         if editingStyle == .delete {
             tableView.beginUpdates()
             contacts.remove(at: indexPath.row)
+            saveContacts()
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }
@@ -49,10 +52,28 @@ class HomeViewController: UITableViewController {
     }
 }
 
+// MARK: - AddViewControllerDelegate
+
 extension HomeViewController: AddViewControllerDelegate {
     func addButtonTapped(name: String, number: String) {
         let contact = Contact(name: name, number: number)
         contacts.append(contact)
+        saveContacts()
         tableView.reloadData()
+    }
+}
+
+// MARK: - User Defaults
+
+private extension HomeViewController {
+    private func saveContacts() {
+        guard let data = try? JSONEncoder().encode(contacts) else { return }
+        UserDefaults.standard.set(data, forKey: "contacts")
+    }
+    
+    private func getContacts() {
+        guard let data = UserDefaults.standard.data(forKey: "contacts"),
+        let contacts = try? JSONDecoder().decode([Contact].self, from: data) else { return }
+        self.contacts = contacts
     }
 }
