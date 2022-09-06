@@ -9,6 +9,7 @@ class HomeViewController: UITableViewController {
         view.backgroundColor = .white
         setupRightBarButtonItem()
         title = "Agenda"
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -16,7 +17,7 @@ class HomeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = HomeTableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HomeTableViewCell else { fatalError("Cell with informed id not exists") }
         let contact = contacts[indexPath.row]
         cell.setup(name: contact.name, number: contact.number)
         return cell
