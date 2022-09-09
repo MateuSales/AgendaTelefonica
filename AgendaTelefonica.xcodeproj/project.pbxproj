@@ -10,6 +10,9 @@
 		CE07885128CBFA2A00035547 /* Contact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE07884F28CBFA2A00035547 /* Contact.xcdatamodeld */; };
 		CE07885428CBFA7B00035547 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07885228CBFA7B00035547 /* Contact+CoreDataClass.swift */; };
 		CE07885528CBFA7B00035547 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07885328CBFA7B00035547 /* Contact+CoreDataProperties.swift */; };
+		CE07885828CC00D300035547 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07885728CC00D300035547 /* DatabaseProtocol.swift */; };
+		CE07885A28CC014C00035547 /* DatabaseCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07885928CC014C00035547 /* DatabaseCoreData.swift */; };
+		CE07885D28CC037C00035547 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07885C28CC037C00035547 /* HomeFactory.swift */; };
 		CE3FA59B28BAA723004DC94E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3FA59A28BAA723004DC94E /* HomeTableViewCell.swift */; };
 		CEBBBBE128B8242E00007218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBBBE028B8242E00007218 /* AppDelegate.swift */; };
 		CEBBBBE328B8242E00007218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBBBE228B8242E00007218 /* SceneDelegate.swift */; };
@@ -25,6 +28,9 @@
 		CE07885028CBFA2A00035547 /* Contact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contact.xcdatamodel; sourceTree = "<group>"; };
 		CE07885228CBFA7B00035547 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		CE07885328CBFA7B00035547 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		CE07885728CC00D300035547 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
+		CE07885928CC014C00035547 /* DatabaseCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCoreData.swift; sourceTree = "<group>"; };
+		CE07885C28CC037C00035547 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		CE3FA59A28BAA723004DC94E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		CEBBBBDD28B8242E00007218 /* AgendaTelefonica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgendaTelefonica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBBBBE028B8242E00007218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE07885628CC00C200035547 /* Abstraction */ = {
+			isa = PBXGroup;
+			children = (
+				CE07885728CC00D300035547 /* DatabaseProtocol.swift */,
+				CE07885928CC014C00035547 /* DatabaseCoreData.swift */,
+			);
+			path = Abstraction;
+			sourceTree = "<group>";
+		};
+		CE07885B28CC037200035547 /* FactoryMethod */ = {
+			isa = PBXGroup;
+			children = (
+				CE07885C28CC037C00035547 /* HomeFactory.swift */,
+			);
+			path = FactoryMethod;
+			sourceTree = "<group>";
+		};
 		CE3FA59C28BAAB20004DC94E /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +100,8 @@
 		CEBBBBDF28B8242E00007218 /* AgendaTelefonica */ = {
 			isa = PBXGroup;
 			children = (
+				CE07885B28CC037200035547 /* FactoryMethod */,
+				CE07885628CC00C200035547 /* Abstraction */,
 				CEF7C0D828C3C7F300349430 /* Add */,
 				CE3FA59C28BAAB20004DC94E /* Home */,
 				CEBBBBE028B8242E00007218 /* AppDelegate.swift */,
@@ -184,9 +209,12 @@
 				CEF7C0E028C3CF3200349430 /* AddViewController.swift in Sources */,
 				CEF7C0DB28C3C80D00349430 /* CustomTextField.swift in Sources */,
 				CE07885428CBFA7B00035547 /* Contact+CoreDataClass.swift in Sources */,
+				CE07885828CC00D300035547 /* DatabaseProtocol.swift in Sources */,
 				CE07885528CBFA7B00035547 /* Contact+CoreDataProperties.swift in Sources */,
 				CE07885128CBFA2A00035547 /* Contact.xcdatamodeld in Sources */,
 				CEF7C0DD28C3CC4600349430 /* CustomButton.swift in Sources */,
+				CE07885A28CC014C00035547 /* DatabaseCoreData.swift in Sources */,
+				CE07885D28CC037C00035547 /* HomeFactory.swift in Sources */,
 				CE3FA59B28BAA723004DC94E /* HomeTableViewCell.swift in Sources */,
 				CEBBBBE328B8242E00007218 /* SceneDelegate.swift in Sources */,
 			);

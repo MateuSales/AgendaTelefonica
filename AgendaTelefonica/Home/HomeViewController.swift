@@ -1,12 +1,11 @@
-import CoreData
 import UIKit
 
 class HomeViewController: UITableViewController {
     private var contacts: [Contact] = []
-    private let container: NSPersistentContainer
+    private let database: DatabaseProtocol
     
-    init(container: NSPersistentContainer) {
-        self.container = container
+    init(database: DatabaseProtocol) {
+        self.database = database
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -21,8 +20,7 @@ class HomeViewController: UITableViewController {
         setupRightBarButtonItem()
         title = "Agenda"
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "cell")
-        loadContainer()
-        loadSavedData()
+        contacts = database.loadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,39 +47,6 @@ class HomeViewController: UITableViewController {
         }
     }
     
-    // MARK: - Core Data
-    
-    func loadContainer() {
-        container.loadPersistentStores { _, error in
-            self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-            if let error = error {
-                print("Error to load persistent container \(error)")
-            }
-        }
-    }
-    
-    func saveContext() {
-        if container.viewContext.hasChanges {
-            do {
-                try container.viewContext.save()
-            } catch {
-                print("An error ocurred while saving: \(error)")
-            }
-        }
-    }
-    
-    func loadSavedData() {
-        let request = Contact.createFetchRequest()
-        let sort = NSSortDescriptor(key: "name", ascending: true)
-        request.sortDescriptors = [sort]
-        
-        do {
-            contacts = try container.viewContext.fetch(request)
-        } catch {
-            print("Load Failed")
-        }
-    }
-    
     private func setupRightBarButtonItem() {
         let barButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapRightButton))
         navigationItem.rightBarButtonItem = barButtonItem
@@ -97,12 +62,12 @@ class HomeViewController: UITableViewController {
 
 extension HomeViewController: AddViewControllerDelegate {
     func addButtonTapped(name: String, number: String) {
-        let contact = Contact(context: container.viewContext)
+        let contact = database.makeContact()
         contact.name = name
         contact.number = number
         
-        saveContext()
-        loadSavedData()
+        database.saveContext()
+        contacts = database.loadData()
         tableView.reloadData()
     }
 }
