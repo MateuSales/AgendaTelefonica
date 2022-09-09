@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE07885128CBFA2A00035547 /* Contact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE07884F28CBFA2A00035547 /* Contact.xcdatamodeld */; };
+		CE07885428CBFA7B00035547 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07885228CBFA7B00035547 /* Contact+CoreDataClass.swift */; };
+		CE07885528CBFA7B00035547 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07885328CBFA7B00035547 /* Contact+CoreDataProperties.swift */; };
 		CE3FA59B28BAA723004DC94E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3FA59A28BAA723004DC94E /* HomeTableViewCell.swift */; };
-		CE3FA59F28BAB580004DC94E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3FA59E28BAB580004DC94E /* Contact.swift */; };
 		CEBBBBE128B8242E00007218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBBBE028B8242E00007218 /* AppDelegate.swift */; };
 		CEBBBBE328B8242E00007218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBBBE228B8242E00007218 /* SceneDelegate.swift */; };
 		CEBBBBE528B8242E00007218 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBBBE428B8242E00007218 /* HomeViewController.swift */; };
@@ -20,8 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE07885028CBFA2A00035547 /* Contact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contact.xcdatamodel; sourceTree = "<group>"; };
+		CE07885228CBFA7B00035547 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		CE07885328CBFA7B00035547 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		CE3FA59A28BAA723004DC94E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		CE3FA59E28BAB580004DC94E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		CEBBBBDD28B8242E00007218 /* AgendaTelefonica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgendaTelefonica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBBBBE028B8242E00007218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBBBBE228B8242E00007218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,14 +58,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		CE3FA59D28BAB571004DC94E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CE3FA59E28BAB580004DC94E /* Contact.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CEBBBBD428B8242E00007218 = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +78,12 @@
 			isa = PBXGroup;
 			children = (
 				CEF7C0D828C3C7F300349430 /* Add */,
-				CE3FA59D28BAB571004DC94E /* Model */,
 				CE3FA59C28BAAB20004DC94E /* Home */,
 				CEBBBBE028B8242E00007218 /* AppDelegate.swift */,
 				CEBBBBE228B8242E00007218 /* SceneDelegate.swift */,
+				CE07884F28CBFA2A00035547 /* Contact.xcdatamodeld */,
+				CE07885228CBFA7B00035547 /* Contact+CoreDataClass.swift */,
+				CE07885328CBFA7B00035547 /* Contact+CoreDataProperties.swift */,
 				CEBBBBE928B8242F00007218 /* Assets.xcassets */,
 				CEBBBBEB28B8242F00007218 /* LaunchScreen.storyboard */,
 				CEBBBBEE28B8242F00007218 /* Info.plist */,
@@ -185,7 +183,9 @@
 				CEBBBBE128B8242E00007218 /* AppDelegate.swift in Sources */,
 				CEF7C0E028C3CF3200349430 /* AddViewController.swift in Sources */,
 				CEF7C0DB28C3C80D00349430 /* CustomTextField.swift in Sources */,
-				CE3FA59F28BAB580004DC94E /* Contact.swift in Sources */,
+				CE07885428CBFA7B00035547 /* Contact+CoreDataClass.swift in Sources */,
+				CE07885528CBFA7B00035547 /* Contact+CoreDataProperties.swift in Sources */,
+				CE07885128CBFA2A00035547 /* Contact.xcdatamodeld in Sources */,
 				CEF7C0DD28C3CC4600349430 /* CustomButton.swift in Sources */,
 				CE3FA59B28BAA723004DC94E /* HomeTableViewCell.swift in Sources */,
 				CEBBBBE328B8242E00007218 /* SceneDelegate.swift in Sources */,
@@ -394,6 +394,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE07884F28CBFA2A00035547 /* Contact.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE07885028CBFA2A00035547 /* Contact.xcdatamodel */,
+			);
+			currentVersion = CE07885028CBFA2A00035547 /* Contact.xcdatamodel */;
+			path = Contact.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CEBBBBD528B8242E00007218 /* Project object */;
 }

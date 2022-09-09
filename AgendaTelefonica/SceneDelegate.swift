@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -7,7 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScenne = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScenne)
-        let homeViewController = HomeViewController()
+        let homeViewController = HomeViewController(container: NSPersistentContainer(name: "Contact"))
         let navigationController = UINavigationController(rootViewController: homeViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
